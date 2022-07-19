@@ -3,7 +3,7 @@
 describe('Funcionalidade página de produtos', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        cy.visit('produtos')
     });
 
     it('Deve selecionar um produto da lista', () => {
@@ -16,7 +16,7 @@ describe('Funcionalidade página de produtos', () => {
     });
 
     it('Deve adicionar um produto ao carrinho', () => {
-        var quantidade = 10
+        var quantidade = 8
         cy.get('[class= "product-block grid"]')
             .contains('Argus All-Weather Tank').click()
         cy.get('.button-variable-item-M').click()
@@ -25,7 +25,7 @@ describe('Funcionalidade página de produtos', () => {
         cy.get('.single_add_to_cart_button').click()
 
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
-        cy.get('.woocommerce-message').should('contain', quantidade + '× “Argus All-Weather Tank” foram adicionados no seu carrinho.')
+        cy.get('.woocommerce-message').should('contain', quantidade + ' × “Argus All-Weather Tank” foram adicionados no seu carrinho.')
 
     });
 });
