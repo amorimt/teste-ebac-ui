@@ -28,4 +28,14 @@ describe('Funcionalidade página de produtos', () => {
         cy.get('.woocommerce-message').should('contain', quantidade + ' × “Argus All-Weather Tank” foram adicionados no seu carrinho.')
 
     });
+
+    it('Deve adicionar produtos no carrinho usando Comandos customizados', () => {
+        cy.addProdutos('Aero Daily Fitness Tee', 'XS', 'Brown', 2)
+
+    });
+
+    it('Deve adicionar produtos no carrinho usando Comandos customizados', () => {
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 'S', 'Red', 3)
+
+    });
 });
